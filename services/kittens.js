@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const KittenModel = require('../models/kittens')
+const KittenModel = require('../models/ModelKittens')
 
 mongoose.Promise = global.Promise;
 
