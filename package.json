@@ -4,6 +4,8 @@
     "description": "kitten api",
     "main": "index.js",
     "scripts": {
+        "start": "node src/index.js"
+        "start:client": "lite-server",
         "fake": "node services/fake.js",
         "goosetest": "node services/kittens.js",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +25,7 @@
         "mongoose": "^4.9.8"
     },
     "devDependencies": {
-        "faker": "^4.1.0"
+        "faker": "^4.1.0",
+        "lite-server": "^2.3.0"
     }
 }
