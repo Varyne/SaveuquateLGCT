@@ -4,6 +4,7 @@
   "description": "kitten api",
   "main": "index.js",
   "scripts": {
+    "start:client": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Varyne/SaveuquateLGCT/issues"
   },
-  "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme"
+  "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8"
+
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
 }

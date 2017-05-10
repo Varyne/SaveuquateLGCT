@@ -1,0 +1,89 @@
+/* FORMAT COMMUN */
+html, body {
+    height: 100%;
+}
+
+/*nav bar*/
+nav {
+    background-color: #f1c40f;
+    color:#e67e22;
+}
+
+nav a {
+     color: #e67e22;
+ }
+
+nav a:hover {
+    background: #e67e22 !important;
+    color: #f1c40f;
+}
+
+/* footer */
+footer {
+    background-color: #e67e22;
+    color: #f1c40f;
+}
+
+/* vues principales */
+.main_content {
+    background-color: #fff;
+    color: #000;
+    min-height: 300px;
+    padding: 80px 50px;
+}
+
+.main_content h1 {
+    font-size: 4em;
+    margin-bottom: 5px;
+    color: #f1c40f;
+}
+
+.main_content h2 {
+    font-size: 3.5em;
+    color: #f1c40f;
+}
+
+.main_content h3 {
+    font-size: 2em;
+}
+
+.main_content p {
+    font-size: 1.8em;
+}
+
+@media only screen and (max-width : 992px) {
+    .main_content h1 {
+        font-size: 2em;
+    }
+
+    .main_content h2 {
+        font-size: 1.5em;
+    }
+
+    .main_content h3 {
+        font-size: 1em;
+    }
+
+    .main_content p {
+        font-size: 1em;
+    }
+}
+
+
+/* home section */
+.home-title {
+    margin-top: 100px;
+}
+
+.home-img {
+    max-height: 400px;
+}
+
+/* kittens section */
+#kittens {
+    background-color: #f1c40f;
+}
+
+#kittens h2 {
+    color: #e67e22;
+}
