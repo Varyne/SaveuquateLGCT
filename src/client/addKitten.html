@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SAVEUQUATE</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="saveuquate client">
+    <meta name="author" content="imie team">
+
+    <!-- boostrap css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+
+    <!--fontawesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- custom css -->
+    <link href="style/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+
+        <!--navbar brand-->
+        <a class="navbar-brand" href="#page-top">SAIVEUQUATE</a>
+
+        <!--bouton toggle -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-responsive">
+                <span class="sr-only">Menu</span> Menu <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Menu responsive -->
+        <div class="collapse navbar-collapse" id="menu-responsive">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="page-scroll">
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="kittens.html">Tous les chatons</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="search.html">Rechercher un chaton</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="addKitten.html">Ajouter un chaton</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- form section -->
+<section class="main_content" id="home">
+    <div class="container">
+        <div class="row">
+            <form onsubmit="add(event)">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" placeholder="Nicolas">
+                </div>
+                <div class="form-group">
+                    <label for="color">Couleur</label>
+                    <input type="text" class="form-control" id="color" placeholder="Bleue">
+                </div>
+
+                <div class="form-group">
+                    <label for="quality1">Qualité 1</label>
+                    <input type="text" class="form-control" id="quality1" placeholder="Bleue">
+                </div>
+
+                <div class="form-group">
+                    <label for="quality2">Qualité 2</label>
+                    <input type="text" class="form-control" id="quality2" placeholder="Bleue">
+                </div>
+
+                <div class="form-group">
+                    <label for="foodBrand">Croquettes préférées</label>
+                    <input type="text" class="form-control" id="foodBrand" placeholder="Bleue">
+                </div>
+
+                <button type="Ajouter" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-6">Site & api réalisés par Thomas, Clément & Gabriel</div>
+            <div class="col-md-6">Intéressé par le code source ? c'est sur <a href="https://github.com/Varyne/SaveuquateLGCT">github</a></div>
+        </div>
+    </div>
+</footer>
+
+<!-- scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/addKitten.js"></script>
+
+</body>
+</html>
