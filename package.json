@@ -1,0 +1,19 @@
+{
+  "name": "saveuqatelgct",
+  "version": "1.0.0",
+  "description": "kitten api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Varyne/SaveuquateLGCT.git"
+  },
+  "author": "Thomas Clément Gabriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Varyne/SaveuquateLGCT/issues"
+  },
+  "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme"
+}
