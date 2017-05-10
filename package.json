@@ -4,7 +4,7 @@
     "description": "kitten api",
     "main": "index.js",
     "scripts": {
-        "start": "node src/index.js"
+        "start": "node src/index.js",
         "start:client": "lite-server",
         "fake": "node services/fake.js",
         "goosetest": "node services/kittens.js",

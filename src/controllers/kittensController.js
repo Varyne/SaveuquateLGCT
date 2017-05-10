@@ -1,8 +1,15 @@
-class KittenController {
+const KittensDb = require('KittensDb');
+
+class KittensController {
 
 
     getAllKittens(req, res) { 
         res.json({value: 'retourne tous les résultats'});
+
+        const response = {
+            message: 'success',
+            statusCode: 200
+        };
 
     }
 
@@ -20,11 +27,14 @@ class KittenController {
 
     putKittensAdopted(req, res) {
         res.json({value: 'modifie la disponibilité d\'un chat'});
+
+        // console.log(req.params.id);
+        getById(req.params.id);
     }
 
-    putKittenAddTalent(req, res) {
+    putKittensAddTalent(req, res) {
         res.json({value: 'ajoute un talent à un chat (modification d\'un chat déjà existant)'});
     }
 }
 
-module.exports = KittenController;
+module.exports = KittensController;
