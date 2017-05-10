@@ -21,9 +21,9 @@ TP Saveuquate API Rest
 - GET /api/1.0/kittens
 - GET /api/1.0/kittens/adopt
 - GET /api/1.0/kittens/adopted
-- POST /api/1.0/kitten
-- PUT /api/1.0/kitten/:id/adopted
-- PUT /api/1.0/kitten/:id/addtalent
+- POST /api/1.0/kittens
+- PUT /api/1.0/kittens/:id/adopted
+- PUT /api/1.0/kittens/:id/addtalent
 
 ### Response format
  La réponse se fera en json. Le xml sera verbalisé
