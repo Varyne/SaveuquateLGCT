@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Varyne/SaveuquateLGCT/issues"
   },
-  "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme"
+  "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme",
+  "dependencies": {
+    "lite-server": "^2.3.0"
+  }
 }
