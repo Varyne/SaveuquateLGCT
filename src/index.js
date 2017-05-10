@@ -1,18 +1,28 @@
 const express = require('express');
 const path = require('path');
 
+// Appel de la classe DefaultController
+const DefaultController = require('./controllers/defaultController');
+const KittenController = require('./controllers/kittenController');
+
 // Démarrage d'express
 const app = express();
 
-// Stockage du chemin vers les routes dans des constantes
-const routes = require('./routes/index.js');
-const kitten = require('./routes/kitten.js');
-
-// On associe les routes aux paths
-app.use('/', routes);
-app.use('/kitten', kitten);
+// Instanciationnde la classe default contoller
+const defaultController = new DefaultController();
+const kittenController = new KittenController();
 
 
-app.get( `/`, (req, res) => {
-    res.send('Hello world');
-}); 
+// Controllers de vues
+app.get( `/`, defaultController.home); 
+
+// Controllers d'API
+app.get(`/api/1.0/kittens`, kittenController.getAllKittens); 
+app.get('/api/1.0/kittens/adopt', kittenController.getKittensAdopt);
+app.get('/api/1.0/kittens/adopted', kittenController.getKittensAdopted);
+app.post('/api/1.0/kittens', kittenController.postKittens);
+app.put('/api/1.0/kittens/:id/adopted', kittenController.putKittensAdopted);
+app.put('/api/1.0/kittens/:id/addtalent', kittenController.putKittenAddTalent);
+
+// Connexion au port 3000
+app.listen(3000, () => console.log('Connected on: 3000'));
