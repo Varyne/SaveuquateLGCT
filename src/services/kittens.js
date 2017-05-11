@@ -1,5 +1,4 @@
 class KittensDb {
-
     getAll() {
         return KittenModel.find({})
             .then(
@@ -42,7 +41,7 @@ class KittensDb {
             ).catch(e => console.error(e))
     }
 
-    adopt(id) {
+    setAdopted(id) {
         KittenModel.update({ _id: id }, { $set: { adopted: true } })
             .then(
                 results => { return results }
@@ -56,6 +55,21 @@ class KittensDb {
             ).catch(e => console.error(e))
     }
 
+    setNewKitten(params) {
+        let name = params.name
+        let color = params.color || null
+        let qualities = params.qualities
+        let flaw = params.flaw || null
+        let foodbrand = params.foodbrand || null
+
+        KittenModel.create({
+            "name": name,
+            "color": color,
+            "qualities": qualities,
+            "flaw": flaw,
+            "foodBrand": foodbrand
+        });
+    }
 }
 
 module.exports = KittensDb;
