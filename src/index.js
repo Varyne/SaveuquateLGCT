@@ -1,18 +1,41 @@
 const express = require('express');
 const path = require('path');
 
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://localhost/kittens')
+
+const db = mongoose.connection
+
+db.on('open', () => {
+    console.log("Connected to MongoDB/kittens");
+})
+
+// Appel de la classe DefaultController
+const DefaultController = require('./controllers/defaultController');
+const KittensController = require('./controllers/kittensController');
+
 // Démarrage d'express
 const app = express();
 
-// Stockage du chemin vers les routes dans des constantes
-const routes = require('./routes/index.js');
-const kitten = require('./routes/kitten.js');
-
-// On associe les routes aux paths
-app.use('/', routes);
-app.use('/kitten', kitten);
+// Instanciationnde la classe default contoller
+const defaultController = new DefaultController();
+const kittensController = new KittensController();
 
 
-app.get( `/`, (req, res) => {
-    res.send('Hello world');
-}); 
+// Controllers de vues
+app.get(`/`, defaultController.home);
+
+// Controllers d'API
+app.get(`/api/1.0/kittens`, kittensController.getAllKittens);
+app.get('/api/1.0/kittens/adopt', kittensController.getKittensAdopt);
+app.get('/api/1.0/kittens/adopted', kittensController.getKittensAdopted);
+app.post('/api/1.0/kittens', kittensController.postKittens);
+app.put('/api/1.0/kittens/:id/adopted', kittensController.putKittensAdopted);
+app.put('/api/1.0/kittens/:id/addtalent', kittensController.putKittensAddTalent);
+
+
+// Connexion au port 3000
+app.listen(3000, () => console.log('Connected on: 3000'));
