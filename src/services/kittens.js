@@ -73,12 +73,12 @@ class KittensDb {
             )
     }
 
-    setNewKitten(params) {
-        let name = params.name
-        let color = params.color || null
-        let qualities = params.qualities
-        let flaw = params.flaw || null
-        let foodbrand = params.foodbrand || null
+    setNewKitten(kitten) {
+        let name = kitten.name
+        let color = kitten.color || null
+        let qualities = kitten.qualities
+        let flaw = kitten.flaw || null
+        let foodbrand = kitten.foodbrand || null
 
         KittenModel.create({
             "name": name,

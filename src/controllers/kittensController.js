@@ -44,7 +44,12 @@ class KittensController {
      * @apiName postKittens
      * @apiGroup Kittens
      * 
-     * @apiParam {Object} params New Kitten JSON
+     * @apiParam {Object} kitten New Kitten JSON
+     * @apiParam {String} kitten.name Nom du chaton
+     * @apiParam {String} kitten.color Couleur du chaton
+     * @apiParam {Array} kitten.qualities Qualitées du chaton
+     * @apiParam {String} kitten.flaw Défaut du chaton
+     * @apiParam {String} kitten.foodbrand Marque de nourriture préférée du chaton
      * 
      * @apiVersion 0.1.0
      */
