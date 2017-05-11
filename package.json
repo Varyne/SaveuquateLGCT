@@ -24,6 +24,7 @@
     "mongoose": "^4.9.8"
   },
   "devDependencies": {
+    "apidoc": "^0.17.5",
     "faker": "^4.1.0",
     "lite-server": "^2.3.0"
   }

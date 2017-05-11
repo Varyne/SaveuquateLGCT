@@ -22,6 +22,7 @@ class KittensDb {
             .then( .. => ..)
             .catch(e => console.log(e) );
         */
+
     }
 
     getColors() {
@@ -72,7 +73,7 @@ class KittensDb {
                 results => { return results }
             ).catch(e => console.error(e))
     }
-    
+
 }
 
 module.exports = KittensDb;
