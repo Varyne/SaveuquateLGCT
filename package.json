@@ -7,7 +7,7 @@
         "start": "node src/index.js",
         "start:client": "lite-server",
         "fake": "node services/fake.js",
-        "doc": "node apidoc",
+        "doc": "./node_modules/.bin/apidoc -i src/ -o docs/",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {

@@ -3,8 +3,6 @@ const path = require('path');
 
 const mongoose = require('mongoose');
 
-const KittenModel = require('./models/ModelKittens');
-
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/kittens')
