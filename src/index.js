@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 
@@ -23,6 +24,9 @@ const app = express();
 
 // enable cors for *
 app.use(cors());
+
+// body parser
+app.use(bodyParser());
 
 // Instanciationnde la classe default contoller
 const defaultController = new DefaultController();

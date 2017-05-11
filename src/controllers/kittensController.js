@@ -54,9 +54,12 @@ class KittensController {
      * @apiVersion 0.1.0
      */
     postKittens(req, res) {
-        kittensDb.setNewKitten(req.body)
+        kittensDb.setNewKitten(req.body);
+        res.json({});
+        /*
             .then(result => res.json(result))
             .catch(e => console.log(e));
+        */
     }
 
     /**

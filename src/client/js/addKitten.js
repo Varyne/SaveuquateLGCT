@@ -12,10 +12,9 @@ function add(e){
     var foodBrand = $('#foodBrand')[0].value;
 
     var data = 'name='+name;
-    data+= 'color='+color;
-    data+= 'quality1='+quality1;
-    data+= 'quality2='+quality2;
-    data+= 'foodBrand='+foodBrand;
+    data+= '&color='+color;
+    data+= '&qualities=['+quality1+','+quality2+']';
+    data+= '&foodBrand='+foodBrand;
 
     // check
     if(  name == '') {
@@ -39,10 +38,10 @@ function add(e){
     }
 
     // url
-    var url = "http://localhost:8080/api/1.0/kittens";
+    var url = "http://localhost:3000/api/1.0/kittens";
 
     $.ajax({
-        url: 'http://localhost:8080/mock/kittens.json',
+        url: url,
         /*
          url: url,
          */
