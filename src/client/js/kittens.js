@@ -8,7 +8,7 @@ function createLine(data) {
     var flaw = data['flaw'] || '';
     var foodBrand = data['foodBrand'] || '';
     var adopted = data['adopted'] || '';
-    var id = data['id'] || 0;
+    var id = data['_id'] || 0;
 
 
     var line = "<tr>";
@@ -96,12 +96,8 @@ function fetchAvailableKittens() {
 // send a request to adopt a kitten
 function sendAdoptRequest(kittenId) {
     $.ajax({
-        url: 'http://localhost:8080/mock/kittensAdopted.json',
-        type: 'GET',
-        /*
-         url: 'http://localhost:8080/api/1.0/kittens/'+kittenId'+/adopted,
+         url: 'http://localhost:8080/api/1.0/kittens/'+kittenId+'/adopted',
          type: 'PUT',
-         */
         dataType: 'json',
         success: function(json, status) {
 
