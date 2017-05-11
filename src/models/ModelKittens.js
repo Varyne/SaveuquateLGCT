@@ -11,4 +11,4 @@ const Kittens = new Schema({
     adopted: { type: Boolean, default: false }
 })
 
-module.exports = mongoose.model('Kittens', Kittens)
+module.exports = mongoose.model('Kittens', Kittens);
