@@ -1,24 +1,26 @@
-const KittensDb = require('KittensDb');
+const KittensDb = require('../services/kittens.js');
+
+const kittensDb = new KittensDb;
 
 class KittensController {
 
 
     getAllKittens(req, res) { 
-        res.json({value: 'retourne tous les résultats'});
-
-        const response = {
-            message: 'success',
-            statusCode: 200
-        };
-
+        kittensDb.getAll()
+        .then( result => res.json(result))
+        .catch(e => console.log(e));
     }
 
     getKittensAdopt(req, res) {
-        res.json({value: 'retourne tous les chats à adopter'});
+        kittensDb.getByAdoptStatus(true)
+        .then( result => res.json(result))
+        .catch(e => console.log(e));
     }
 
-    getKittensAdopted(req,res) {
-        res.json({value: 'retourne tous les chats déjà adoptés'});
+    getKittensAdopted(req, res) {
+        kittensDb.getByAdoptStatus(false)
+        .then(result => res.json(result))
+        .catch(e => console.log(e));
     }
 
     postKittens(req, res) {
@@ -26,14 +28,15 @@ class KittensController {
     }
 
     putKittensAdopted(req, res) {
-        res.json({value: 'modifie la disponibilité d\'un chat'});
-
-        // console.log(req.params.id);
-        getById(req.params.id);
+        // kittensDb.getById(req.params.id)
+        // .then(result => res.json(result))
+        // .catch(e => console.log(e));
     }
 
     putKittensAddTalent(req, res) {
         res.json({value: 'ajoute un talent à un chat (modification d\'un chat déjà existant)'});
+
+        kittensDb.addTalent(req.params.id);
     }
 }
 

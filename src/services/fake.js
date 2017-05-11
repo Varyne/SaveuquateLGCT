@@ -29,6 +29,7 @@ const seed = (count) => {
             "qualities": faker.company.catchPhraseAdjective(),
             "flaw": faker.hacker.adjective(),
             "foodBrand": faker.company.companyName(),
+            "adopted": faker.random.boolean()
         });
     }
 }

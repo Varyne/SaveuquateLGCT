@@ -1,32 +1,48 @@
+const KittenModel = require('../models/ModelKittens');
 
 class KittensDb {
 
     getAll() {
-        KittenModel.find({})
-            .then(
-                results => { return results }
-            ).catch(e => console.error(e))
+
+        const promise = new Promise( (resolve, reject) => {
+            
+            KittenModel.find({})
+        
+            .then(results => { resolve( results) })
+        
+            .catch(e => reject(e) );
+        });
+
+        return promise;
+
+        /*
+            return KittenModel.find({})
+        
+            .then(results => { return results })
+            .then( .. => ..)
+            .catch(e => console.log(e) );
+        */
     }
 
     getColors() {
         KittenModel.find({}, { color: 1, _id: 0 })
             .then(
                 results => { return results }
-            ).catch(e => console.error(e))
+            ).catch(e => console.error(e));
     }
 
     getByAdoptStatus(boolean) {
-        KittenModel.find({ adopted: boolean }, { name: 1, _id: 0 })
+        return KittenModel.find({ adopted: boolean }, { name: 1, _id: 0 })
             .then(
                 results => { return results }
-            ).catch(e => console.error(e))
+            );
     }
 
     getById(id) {
-        KittenModel.findById(id)
+        return KittenModel.findById(id)
             .then(
                 result => { return result }
-            ).catch(e => console.error(e))
+            );
     }
 
     getByName(ReqName) {

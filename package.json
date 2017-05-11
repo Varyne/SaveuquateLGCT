@@ -1,31 +1,30 @@
 {
-    "name": "saveuqatelgct",
-    "version": "1.0.0",
-    "description": "kitten api",
-    "main": "index.js",
-    "scripts": {
-        "start": "node src/index.js",
-        "start:client": "lite-server",
-        "fake": "node services/fake.js",
-        "goosetest": "node services/kittens.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Varyne/SaveuquateLGCT.git"
-    },
-    "author": "Thomas Clément Gabriel",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Varyne/SaveuquateLGCT/issues"
-    },
-    "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme",
-    "dependencies": {
-        "express": "^4.15.2",
-        "mongoose": "^4.9.8"
-    },
-    "devDependencies": {
-        "faker": "^4.1.0",
-        "lite-server": "^2.3.0"
-    }
+  "name": "saveuqatelgct",
+  "version": "1.0.0",
+  "description": "kitten api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:client": "lite-server",
+    "fake": "node src/services/fake.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Varyne/SaveuquateLGCT.git"
+  },
+  "author": "Thomas Clément Gabriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Varyne/SaveuquateLGCT/issues"
+  },
+  "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "lite-server": "^2.3.0"
+  }
 }
