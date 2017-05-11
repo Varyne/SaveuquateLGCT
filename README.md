@@ -1,6 +1,11 @@
 # SaveuquateLGCT
 TP Saveuquate API Rest
 
+## Doc
+Pour lancer la génération de la documentation des routes:  
+`npm run doc`  
+Lancer `index.html` du dossier `docs` dans votre navigateur favori !
+
 ## API
 ### Available data
  - nom de jeune fille du chaton 
