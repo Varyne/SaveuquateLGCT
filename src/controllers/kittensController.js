@@ -28,9 +28,9 @@ class KittensController {
     }
 
     putKittensAdopted(req, res) {
-        // kittensDb.getById(req.params.id)
-        // .then(result => res.json(result))
-        // .catch(e => console.log(e));
+        kittensDb.adopt(req.params.id)
+        .then(result => res.json(result))
+        .catch(e => console.log(e));
     }
 
     putKittensAddTalent(req, res) {
