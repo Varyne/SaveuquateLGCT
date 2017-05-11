@@ -1,5 +1,4 @@
 {
-
   "name": "saveuqatelgct",
   "version": "1.0.0",
   "description": "kitten api",
@@ -21,6 +20,7 @@
   },
   "homepage": "https://github.com/Varyne/SaveuquateLGCT#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "cors": "^2.8.3",
     "express": "^4.15.2",
     "mongoose": "^4.9.8"
@@ -31,4 +31,3 @@
     "lite-server": "^2.3.0"
   }
 }
-
