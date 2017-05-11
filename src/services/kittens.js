@@ -1,8 +1,7 @@
-
 class KittensDb {
 
     getAll() {
-        KittenModel.find({})
+        return KittenModel.find({})
             .then(
                 results => { return results }
             ).catch(e => console.error(e))
@@ -56,7 +55,7 @@ class KittensDb {
                 results => { return results }
             ).catch(e => console.error(e))
     }
-    
+
 }
 
 module.exports = KittensDb;
