@@ -30,10 +30,10 @@ const kittensController = new KittensController();
 
 
 // Controllers de vues
-app.get( `/`, defaultController.home); 
+app.get(`/`, defaultController.home);
 
 // Controllers d'API
-app.get(`/api/1.0/kittens`, kittensController.getAllKittens); 
+app.get(`/api/1.0/kittens`, kittensController.getAllKittens);
 app.get('/api/1.0/kittens/adopt', kittensController.getKittensAdopt);
 app.get('/api/1.0/kittens/adopted', kittensController.getKittensAdopted);
 app.post('/api/1.0/kittens', kittensController.postKittens);
