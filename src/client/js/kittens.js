@@ -1,19 +1,30 @@
 // create a kitten line for the table
 function createLine(data) {
+
+    // data
+    var name = data['name'] || '';
+    var color = data['color'] || '';
+    var qualities = data['qualities'] || ['',''];
+    var flaw = data['flaw'] || '';
+    var foodBrand = data['foodBrand'] || '';
+    var adopted = data['adopted'] || '';
+    var id = data['id'] || 0;
+
+
     var line = "<tr>";
-    line += "<td>"+data['name']+"</td>";
-    line += "<td>"+data['color']+"</td>";
-    line += "<td>"+data['qualities'][0]+"</td>";
+    line += "<td>"+name+"</td>";
+    line += "<td>"+color+"</td>";
+    line += "<td>"+qualities+"</td>";
     line += "<td>";
-    line += data['qualities'][1] ? data['qualities'][1] : "aucune";
+    line += qualities[1] ? qualities[1] : "aucune";
     line += "</td>";
-    line += "<td>"+data['flaw']+"</td>";
-    line += "<td>"+data['foodBrand']+"</td>";
+    line += "<td>"+flaw+"</td>";
+    line += "<td>"+foodBrand+"</td>";
     line += "<td>";
-    line += data['adopted'] ? "adoptée" : "disponible" ;
+    line += adopted ? "adoptée" : "disponible" ;
     line += "</td>";
     line += "<td>";
-    line += data['adopted'] ? '' : '<a href="#" onclick="sendAdoptRequest('+data["id"]+')">Adoptez moi</a>' ;
+    line += adopted ? '' : '<a href="#" onclick="sendAdoptRequest('+id+')">Adoptez moi</a>' ;
     line += "</td>";
 
     return line;
@@ -22,7 +33,7 @@ function createLine(data) {
 // fetch all kittens
 function fetchKittens() {
     $.ajax({
-        url: 'http://localhost:8080/mock/kittens.json',
+        url: 'http://localhost:3000/api/1.0/kittens',
         type: 'GET',
         dataType: 'json',
         success: function(json, status) {
@@ -41,7 +52,7 @@ function fetchKittens() {
 // fetch adopted kittens
 function fetchAdoptedKittens() {
     $.ajax({
-        url: 'http://localhost:8080/mock/kittens.json',
+        url: 'http://localhost:3000/api/1.0/kittens/adopted',
         /*
         url: 'http://localhost:8080/api/1.0/kittens/adopt',
          */
@@ -63,7 +74,7 @@ function fetchAdoptedKittens() {
 // fetch available kittens
 function fetchAvailableKittens() {
     $.ajax({
-        url: 'http://localhost:8080/mock/kittens.json',
+        url: 'http://localhost:3000/api/1.0/kittens/adopt',
         /*
          url: 'http://localhost:8080/api/1.0/kittens/adopted',
          */
