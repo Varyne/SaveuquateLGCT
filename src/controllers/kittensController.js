@@ -49,7 +49,9 @@ class KittensController {
      * @apiVersion 0.1.0
      */
     postKittens(req, res) {
-        res.json({ value: 'ajoute un nouveau chat' });
+        kittensDb.setNewKitten(req.body)
+            .then(result => res.json(result))
+            .catch(e => console.log(e));
     }
 
     /**
@@ -60,8 +62,9 @@ class KittensController {
      * 
      * @apiParam {String} id Kitten's id
      */
+
     putKittensAdopted(req, res) {
-        kittensDb.getById(req.params.id)
+        kittensDb.setAdopted(req.params.id)
             .then(result => res.json(result))
             .catch(e => console.log(e));
     }
@@ -76,9 +79,9 @@ class KittensController {
      * @apiParam {String} quality New kitten talent
      */
     putKittensAddTalent(req, res) {
-        res.json({ value: 'ajoute un talent à un chat (modification d\'un chat déjà existant)' });
-
-        kittensDb.addTalent(req.params.id);
+        kittensDb.addTalent(req.params.id, req.body)
+            .then(result => res.json(result))
+            .catch(e => console.log(e));
     }
 }
 

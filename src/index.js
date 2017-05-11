@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
@@ -19,6 +20,9 @@ const KittensController = require('./controllers/kittensController');
 
 // Démarrage d'express
 const app = express();
+
+// enable cors for *
+app.use(cors());
 
 // Instanciationnde la classe default contoller
 const defaultController = new DefaultController();
