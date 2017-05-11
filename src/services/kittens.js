@@ -3,13 +3,13 @@ const KittenModel = require('../models/ModelKittens');
 class KittensDb {
     getAll() {
 
-        const promise = new Promise( (resolve, reject) => {
-            
+        const promise = new Promise((resolve, reject) => {
+
             KittenModel.find({})
-        
-            .then(results => { resolve( results) })
-        
-            .catch(e => reject(e) );
+
+            .then(results => { resolve(results) })
+
+            .catch(e => reject(e));
         });
 
         return promise;
@@ -25,14 +25,14 @@ class KittensDb {
     }
 
     getColors() {
-        KittenModel.find({}, { color: 1, _id: 0 })
+        return KittenModel.find({}, { color: 1, _id: 0 })
             .then(
                 results => { return results }
-            ).catch(e => console.error(e));
+            );
     }
 
     getByAdoptStatus(boolean) {
-        return KittenModel.find({ adopted: boolean }, { name: 1, _id: 0 })
+        return KittenModel.find({ adopted: boolean })
             .then(
                 results => { return results }
             );
@@ -46,31 +46,31 @@ class KittensDb {
     }
 
     getByName(ReqName) {
-        KittenModel.find({ name: ReqName })
+        return KittenModel.find({ name: ReqName })
             .then(
                 result => { return result }
-            ).catch(e => console.error(e))
+            )
     }
 
     getByColor(reqColor) {
-        KittenModel.find({ color: reqColor })
+        return KittenModel.find({ color: reqColor })
             .then(
                 results => { return results }
-            ).catch(e => console.error(e))
+            )
     }
 
     setAdopted(id) {
-        KittenModel.update({ _id: id }, { $set: { adopted: true } })
+        return KittenModel.update({ _id: id }, { $set: { adopted: true } })
             .then(
                 results => { return results }
-            ).catch(e => console.error(e))
+            )
     }
 
     addTalent(id, quality) {
-        KittenModel.findByIdAndUpdate(id, { $push: { qualities: quality } })
+        return KittenModel.findByIdAndUpdate(id, { $push: { qualities: quality } })
             .then(
                 results => { return results }
-            ).catch(e => console.error(e))
+            )
     }
 
     setNewKitten(params) {
