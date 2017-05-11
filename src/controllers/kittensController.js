@@ -22,7 +22,7 @@ class KittensController {
      * @apiVersion 0.1.0
      */
     getKittensAdopt(req, res) {
-        kittensDb.getByAdoptStatus(true)
+        kittensDb.getByAdoptStatus(false)
             .then(result => res.json(result))
             .catch(e => console.log(e));
     }
@@ -34,7 +34,7 @@ class KittensController {
      * @apiVersion 0.1.0
      */
     getKittensAdopted(req, res) {
-        kittensDb.getByAdoptStatus(false)
+        kittensDb.getByAdoptStatus(true)
             .then(result => res.json(result))
             .catch(e => console.log(e));
     }
